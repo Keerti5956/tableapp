@@ -1,0 +1,18 @@
+/* Enter your custom styles here */
+/* Add margin-left to the Date input to shift it towards the right */
+.margin-date {
+    margin-left: 250px; /* Adjust the value to control the starting margin */
+}
+ 
+/* Add margin-left to the Technology input and Button */
+.margin-left {
+    margin-left: 100px;
+}
+ 
+.button{
+    margin-left:100px;
+} 
+
+.margin-top {
+    margin-left: 300px;
+}

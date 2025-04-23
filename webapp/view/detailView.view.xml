@@ -1,0 +1,74 @@
+<mvc:View controllerName="app.tableapp.controller.detailView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:table="sap.ui.table">
+
+    <Page id="detpage" title="Detail View">
+        <content>
+            <VBox alignItems="Center" justifyContent="Center">
+                <Image src="https://images.livemint.com/img/2022/05/16/600x338/Screenshot_2022-05-16_at_5.27.46_PM_1652702278338_1652702290176.png" width="300px" height="200px"></Image>
+            </VBox>
+
+            <HBox class="margin-top">
+                <Text text="Technology: {/technology}" width="500px" />  
+                <Text text="Date: {/date}" />
+            </HBox>
+
+            <VBox class="margin-left">
+                <Text text="Search:" />
+                <SearchField id="searchField" width="300px" placeholder="Enter search text" search="onSearch" />
+            </VBox>
+            <HBox> 
+                <HBox class="margin-top">
+                    <Button text="Add Row" press="onAddRow" width="100px" />
+                </HBox>
+                <HBox class="margin-top">
+                    <Button text="Delete Row" press="onDeleteRow" width="100px" />
+                </HBox>
+            </HBox>
+            <Table id="empTable" items="{/employees}">
+                <columns>
+                    <Column>
+                        <Text text="Name"/>
+                    </Column>
+                    <Column>
+                        <Text text="Capgemini ID"/>
+                    </Column>
+                    <Column>
+                        <Text text="Designation"/>
+                    </Column>
+                    <Column>
+                        <Text text="Project Name"/>
+                    </Column>
+                    <Column>
+                        <Text text="More Info"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Input value="{name}" placeholder="Enter Name"/>
+                            <Input value="{capgeminiId}" placeholder="Enter ID"/>
+                            <Input value="{designation}" placeholder="Enter Designation"/>
+                            <Input value="{projectName}" placeholder="Enter Project"/>
+                            <Button icon="sap-icon://add" press="onOpenPopup"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+
+    <!-- Popup Dialog -->
+    <Dialog id="popupDialog" title="Additional Info">
+        <VBox>
+            <Input id="extraField1" value="{popupModel>/extraField1}" placeholder="Enter Additional Field 1"/>
+            <Input id="extraField2" value="{popupModel>/extraField2}" placeholder="Enter Additional Field 2"/>
+        </VBox>
+        <endButton>
+            <Button text="Close" press="onClosePopup"/>
+        </endButton>
+    </Dialog>
+
+</mvc:View>
