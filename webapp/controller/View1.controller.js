@@ -38,7 +38,7 @@ sap.ui.define([
             if (Device.system.phone) {
                 this.getView().byId("idButton").setWidth("100%");
             } else {
-                this.getView().byId("idButton").setWidth(); // Optional: you can set a default width if needed
+                this.getView().byId("idButton").setWidth(); 
             }
         }
     });
