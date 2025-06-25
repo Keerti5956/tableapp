@@ -5,45 +5,38 @@
     xmlns:table="sap.ui.table">
 
     <Page id="detpage" title="Detail View">
+        <Toolbar>
+            <Button text="Back" icon="sap-icon://nav-back" press="view2ToView1"/>
+        </Toolbar>
+
         <content>
             <VBox alignItems="Center" justifyContent="Center">
-                <Image src="https://images.livemint.com/img/2022/05/16/600x338/Screenshot_2022-05-16_at_5.27.46_PM_1652702278338_1652702290176.png" width="300px" height="200px"></Image>
+                <Image src="https://images.livemint.com/img/2022/05/16/600x338/Screenshot_2022-05-16_at_5.27.46_PM_1652702278338_1652702290176.png"
+                       width="300px" height="200px"/>
             </VBox>
 
-            <HBox class="margin-top">
-                <Text text="Technology: {/technology}" width="500px" />  
-                <Text text="Date: {/date}" />
+            <VBox class="sapUiSmallMarginTop">
+                <Text text="Technology: {/technology}" class="sapUiSmallMarginBottom"/>
+                <Text text="Date: {/date}"/>
+            </VBox>
+
+            <VBox class="sapUiSmallMarginTop">
+                <Text text="Search:"/>
+                <SearchField id="searchField" width="300px" placeholder="Enter search text" search="onSearch"/>
+            </VBox>
+
+            <HBox justifyContent="Center" alignItems="Center" class="sapUiSmallMarginTop">
+                <Button text="Add Row" press="onAddRow" class="sapUiTinyMarginEnd"/>
+                <Button text="Delete Row" press="onDeleteRow"/>
             </HBox>
 
-            <VBox class="margin-left">
-                <Text text="Search:" />
-                <SearchField id="searchField" width="300px" placeholder="Enter search text" search="onSearch" />
-            </VBox>
-            <HBox> 
-                <HBox class="margin-top">
-                    <Button text="Add Row" press="onAddRow" width="100px" />
-                </HBox>
-                <HBox class="margin-top">
-                    <Button text="Delete Row" press="onDeleteRow" width="100px" />
-                </HBox>
-            </HBox>
-            <Table id="empTable" items="{/employees}">
+            <Table id="empTable" items="{/employees}" mode="SingleSelectLeft">
                 <columns>
-                    <Column>
-                        <Text text="Name"/>
-                    </Column>
-                    <Column>
-                        <Text text="Capgemini ID"/>
-                    </Column>
-                    <Column>
-                        <Text text="Designation"/>
-                    </Column>
-                    <Column>
-                        <Text text="Project Name"/>
-                    </Column>
-                    <Column>
-                        <Text text="More Info"/>
-                    </Column>
+                    <Column><Text text="Name"/></Column>
+                    <Column><Text text="Capgemini ID"/></Column>
+                    <Column><Text text="Designation"/></Column>
+                    <Column><Text text="Project Name"/></Column>
+                    <Column><Text text="More Info"/></Column>
                 </columns>
                 <items>
                     <ColumnListItem>
@@ -60,7 +53,6 @@
         </content>
     </Page>
 
-    <!-- Popup Dialog -->
     <Dialog id="popupDialog" title="Additional Info">
         <VBox>
             <Input id="extraField1" value="{popupModel>/extraField1}" placeholder="Enter Additional Field 1"/>
@@ -70,5 +62,4 @@
             <Button text="Close" press="onClosePopup"/>
         </endButton>
     </Dialog>
-
 </mvc:View>

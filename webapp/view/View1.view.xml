@@ -2,28 +2,30 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
-    <Page id="page" title="{i18n>title}">
+
+    <Page id="page" title="Employee Entry">
         <VBox alignItems="Center" justifyContent="Center">
-            <Image src="https://images.livemint.com/img/2022/05/16/600x338/Screenshot_2022-05-16_at_5.27.46_PM_1652702278338_1652702290176.png" width="300px" height="200px"></Image>
+            <Image src="https://images.livemint.com/img/2022/05/16/600x338/Screenshot_2022-05-16_at_5.27.46_PM_1652702278338_1652702290176.png"
+                   width="300px" height="200px"/>
         </VBox>
-        <HBox>
-            <VBox class="margin-date">
-                <Text text="Date:"/>
-                <Input id="date" width="200px" type="Date" value="{/currentDate}" />
-            </VBox>
 
-            <VBox class="margin-left">
-                <Text text="Technology:"/>
-                <Select id="tech" width="200px">
-                    <core:Item text="FIORI" key="FIORI"/>
-                    <core:Item text="ABAP" key="ABAP"/>
-                    <core:Item text="ODATA" key="ODATA"/>
-                </Select>
-            </VBox>
+        <VBox class="sapUiSmallMarginTop" alignItems="Center">
+            <Label text="Date:"/>
+            <Input id="date" width="200px" type="Date" value="{/currentDate}" />
 
-            <VBox class="margin-left">
-                <Button id="idButton" text="Go" press="onGoPress"/>
-            </VBox>
-        </HBox>
+            <Label text="Technology:" class="sapUiSmallMarginTop"/>
+            <Select id="tech" width="200px">
+                <core:Item text="FIORI" key="FIORI"/>
+                <core:Item text="ABAP" key="ABAP"/>
+                <core:Item text="ODATA" key="ODATA"/>
+            </Select>
+        </VBox>
+
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button id="idButton" text="Go" press="onGoPress" type="Emphasized"/>
+            </Toolbar>
+        </footer>
     </Page>
 </mvc:View>

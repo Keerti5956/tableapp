@@ -84,7 +84,7 @@
           "name": "RouteDetail",
           "pattern": "detail/{idButton}/{dateSelected}",
           "target": [
-            "TargetView1",
+            
             "TargetDetailView"
           ]
         }
